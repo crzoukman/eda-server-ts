@@ -2,12 +2,12 @@ require("dotenv").config();
 import express, { json } from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
-import config from 'config';
+import config from './config';
 import connectToDB from './utils/connectToDB';
 import logger from './utils/logger';
 import router from './routes';
 
-const port = config.get('port');
+const port = config.PORT;
 
 const app = express();
 
