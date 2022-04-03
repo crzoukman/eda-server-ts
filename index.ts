@@ -16,8 +16,8 @@ app.use(cookieParser());
 app.use(cors());
 app.use(router);
 
-app.listen(port, async () => {
+app.listen(process.env.PORT || port, async () => {
   console.clear();
   await connectToDB();
-  logger.info('Server is running at http://localhost:' + port);
+  logger.info('Server is running on PORT ' + port);
 });
